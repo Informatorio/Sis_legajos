@@ -1,0 +1,3 @@
+[submodule "PeopleMatic"]
+	path = PeopleMatic
+	url = git@github.com:Informatorio/PeopleMatic.git
