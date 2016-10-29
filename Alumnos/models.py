@@ -43,6 +43,6 @@ class Localizacion(models.Model):
 	def localizacion(id):
 		return Localizacion.objects.filter(alumno=id)
 
-	def archivo(localizacion):
-		return Archivo.objects.get=archivo
+#	def archivo(localizacion):
+#		return Archivo.objects.get=archivo
 	
