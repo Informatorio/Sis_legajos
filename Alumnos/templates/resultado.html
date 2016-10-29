@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} Resultado {% endblock %}
+
+{% block content %}
+<h2>Se buscó: {{ apellido }}</h2>
+
+{% for alumno in legajos_encontrados %}
+	<p>{{ alumno.apellido }}  -  {{ alumno.nombre }}
+		<a href="/legajo/{{ alumno.id }}"> VER</a>
+	</p>
+{% endfor %}
+
+{% endblock %}
