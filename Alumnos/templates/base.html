@@ -2,7 +2,7 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<title>{% block title %} Mi template {% endblock %}</title>	
+		<title>{% block title %} Sis Legajos {% endblock %}</title>	
 		<!--Boostrap-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -10,6 +10,56 @@
 		
 	</head>
 	<body>
+
+<!-- COMIENZO TOP BAR -->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Sis Legajos v0.2</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	<ul class="nav navbar-nav">
+
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> BUSCAR POR <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="/busqueda_dni"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> DNI </a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="/busqueda_apellido"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> APELLIDO </a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="/busqueda_legajo"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> LEGAJO </a></li>
+		</ul>
+	</li>
+
+<!-- 	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Localidades <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="/localidades"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Crear Nueva</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="/mostrar_localidades"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Ver Todas</a></li>
+		</ul>
+	</li>
+
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Movimientos <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="/movimientos"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Crear Nuevo</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="/mostrar_movimientos"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Ver Todos</a></li>
+		</ul>
+	</li> -->
+
+	</ul>
+	</div>
+</nav>
+
+
+<!-- FINAL TOP BAR -->
+
 		<div class="row">
 			<div class="col-sm-4" id="sidebar">
 				{% block sidebar %}
@@ -20,10 +70,14 @@
 				{% endblock %}
 			</div>
 			
-			<div class="col-sm-8" id="content">
+			<div class="col-sm-8" style="margin-top:70px" id="content">
 				{% block content %}
 				{% endblock %}
 			</div>
 		</div>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	</body>
 </html>

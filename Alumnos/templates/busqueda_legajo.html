@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/busqueda_legajo/" method="POST">
+	<!-- Etiqueta que sirve para identificar el formulario y mitigar ataques-->
+	{% csrf_token %}
+	{{ form.as_p }}
+
+	<input type="submit" value="Buscar">
+
+</form>
+
+{% endblock %}

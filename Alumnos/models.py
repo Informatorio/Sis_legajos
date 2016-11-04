@@ -18,8 +18,14 @@ class Alumno(models.Model):
 		#	queryset =Alumno.objects.filter(apellido__iexact='apellido')
 		#return Alumno.objects.filter(apellido__iexact='apellido')
 	@staticmethod
-	def buscar_legajo(apellido):
-		return Alumno.objects.filter(apellido__iexact=apellido)
+	def buscar_legajo_dni(dni):
+		return Alumno.objects.filter(dni=dni)
+	@staticmethod
+	def buscar_legajo_apellido(apellido):
+		return Alumno.objects.filter(apellido=apellido)
+	@staticmethod
+	def buscar_legajo_legajo(legajo):
+		return Alumno.objects.filter(legajo=legajo)
 
 
 class Lugar(models.Model):
@@ -36,13 +42,12 @@ class Localizacion(models.Model):
 	archivo  = models.ForeignKey(Archivo,null = True)
 	alumno   = models.ForeignKey(Alumno,null = True)
 
-	def __str__(self):
-		return self.lugar
+	#def __str__(self):
+	#	return self.lugar
 	
 	@staticmethod
 	def localizacion(id):
 		return Localizacion.objects.filter(alumno=id)
 
-	def archivo(localizacion):
-		return Archivo.objects.get=archivo
-	
+	#def archivo(localizacion):
+	#	return Archivo.objects.get(pk=archivo)
