@@ -16,8 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from Alumnos import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^busqueda/$', views.busqueda),
+    url(r'^$', views.index, name='Index'),
+    url(r'^busqueda_dni/$', views.busqueda_dni),
+    url(r'^busqueda_apellido/$', views.busqueda_apellido),
+    url(r'^busqueda_legajo/$', views.busqueda_legajo),
     url(r'^legajo/([0-9]+)/$', views.alumno),
 ]
