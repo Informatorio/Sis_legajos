@@ -4,7 +4,7 @@ from django.db import models
 
 class Alumno(models.Model):
 	dni      = models.IntegerField()
-	nombre   = models.CharField(max_length=70,null=True)
+	nombre   = models.CharField(max_length=70,null=False)
 	apellido = models.CharField(max_length=70)
 	fecha_nacimiento = models.DateField(null=True)
 	legajo   = models.CharField(max_length=9)

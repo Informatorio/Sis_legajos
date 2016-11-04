@@ -14,3 +14,10 @@ class Busqueda_legajo_apellido(forms.Form):
 
 class Busqueda_legajo_legajo(forms.Form):
 	legajo = forms.CharField(label='Legajo',max_length=9)
+
+#class Nuevo_alumno(forms.Form):
+#	dni = forms.IntegerField(label="D.N.I:")
+#	nombre = forms.CharField(label="Nombre:",max_length=70,required=True)
+#	apellido =forms.CharField()
+#	fecha_nacimiento
+#	legajo
