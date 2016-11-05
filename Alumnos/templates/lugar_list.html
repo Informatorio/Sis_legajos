@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="/lugar/">Agregar Lugar</a>
+<br>
+<table>
+	<thead>
+		<tr>		
+			<td>Lugar</td>
+			<td></td>
+			<td>Acciones</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% for lugar in lugares %}
+		<tr>			
+			<td>{{ lugar.descripcion }}</td> 
+			<td>  </td>
+			<td>
+				<a href="#">Editar</a>
+				<a href="#">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}
