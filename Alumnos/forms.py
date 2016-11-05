@@ -12,9 +12,8 @@ class LugarForm(forms.ModelForm):
 		fields = ['descripcion',]
 		labels = {'descripcion': 'Descripción',}
 
-class ArchivoForm(forms.ModelForn):
+class ArchivoForm(forms.ModelForm):
 	class Meta:
 		model =  Archivo
 		fields = ['numero','cajones','lugar',]
 		lables = {'numero': 'Código', 'cajones': 'Número de cajón', 'lugar': 'Lugar'}
-		

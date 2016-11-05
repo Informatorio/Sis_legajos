@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,Http404
 from Alumnos.models import Alumno, Localizacion, Lugar, Archivo
-from Alumnos.forms import Busqueda_legajo, LugarForm
+from Alumnos.forms import Busqueda_legajo, LugarForm, ArchivoForm
 
 
 def busqueda(request):
@@ -47,7 +47,7 @@ def archivo_create(request):
 		form = ArchivoForm(request.POST)
 		if form.is_valid():
 			form.save()
-		return render(request, 'archivo_list.html',{'archivo':Archivo.objects.all()})
+		return render(request, 'archivo_list.html',{'archivos':Archivo.objects.all()})
 	else:
 		form = ArchivoForm()
 

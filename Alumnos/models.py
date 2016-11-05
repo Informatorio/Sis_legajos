@@ -24,10 +24,14 @@ class Alumno(models.Model):
 class Lugar(models.Model):
 	descripcion = models.CharField(max_length=30)
 
+	def __str__(self):
+		return '{}'.format(self.descripcion)
+
 class Archivo(models.Model):
 	numero = models.IntegerField()
 	cajones = models.IntegerField()
 	lugar = models.ForeignKey(Lugar,null=True)	
+
 
 class Localizacion(models.Model):
 	cajon    = models.IntegerField()
