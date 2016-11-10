@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form action="/busqueda_apellido/" method="POST">
+<form action="/busqueda_apellido/" method="POST" style="text-align:center;">
 	<!-- Etiqueta que sirve para identificar el formulario y mitigar ataques-->
 	{% csrf_token %}
 	{{ form.as_p }}
