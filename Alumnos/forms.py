@@ -18,6 +18,15 @@ class Busqueda_legajo_legajo(forms.Form):
 #class Nuevo_alumno(forms.Form):
 #	dni = forms.IntegerField(label="D.N.I:")
 #	nombre = forms.CharField(label="Nombre:",max_length=70,required=True)
-#	apellido =forms.CharField()
-#	fecha_nacimiento
-#	legajo
+#	apellido = forms.CharField(label="Apellido:",max_length=70,required=True)
+#	fecha_nacimiento = forms.DateField(label="Fecha de Nacimiento:")
+
+class Nuevo_alumno(forms.ModelForm):# Nuevo_alumnoForm
+	class Meta:
+		model = Alumno
+		fields = ('legajo', 'dni', 'nombre', 'apellido', 'fecha_nacimiento')
+
+class AlmacenarForm(forms.ModelForm):
+	class Meta:
+		model = Localizacion
+		fields = ('lugar', 'archivo', 'cajon')

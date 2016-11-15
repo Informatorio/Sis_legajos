@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,Http404
 from Alumnos.models import Alumno, Localizacion, Lugar, Archivo
-from Alumnos.forms import Busqueda_legajo_dni, Busqueda_legajo_apellido, Busqueda_legajo_legajo
+from Alumnos.forms import Busqueda_legajo_dni, Busqueda_legajo_apellido, Busqueda_legajo_legajo, Nuevo_alumno, AlmacenarForm
 
 def index(request):
     return render(request, 'base.html')
@@ -50,5 +50,30 @@ def alumno(request, id):
 	except Alumno.DoesNotExist:
 		raise Http404("No se encontró el legajo")
 	return render(request, 'alumno.html',{'alumno': alumno, 'lugar': lugar, 'archivo': archivo, 'cajon': cajon})
+
+def nuevo_alumno(request):
+	if request.method == 'POST':
+		form = Nuevo_alumno(request.POST)
+		if form.is_valid():
+			alumno = form.save(commit=False)
+			alumno.save()
+			return render(request, 'base.html',{'alumno': alumno})
+		else:
+			return render(request, 'nuevo_alumno.html',{'form': form})
+	else:
+		form = Nuevo_alumno()
+		return render(request, 'nuevo_alumno.html',{'form': form})
+
+def almacenar(request):
+	if request.method == 'POST':
+		form = AlmacenarForm(request.POST)
+		if form.is_valid():
+			localizacion = form.save(commit=False)
+			localizacion.save()
+			return render(request, 'alumno.html',{'alumno':localizacion.alumno})
+	else:
+		form = AlmacenarForm()
+		return render(request, 'almacenar.html',{'form':form})
+
 
 # Create your views here.

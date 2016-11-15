@@ -31,10 +31,16 @@ class Alumno(models.Model):
 class Lugar(models.Model):
 	descripcion = models.CharField(max_length=30)
 
+	def __str__(self):
+		return self.descripcion
+
 class Archivo(models.Model):
 	numero = models.IntegerField()
 	cajones = models.IntegerField()
 	lugar = models.ForeignKey(Lugar,null=True)	
+
+	def __str__(self):
+		return "{}".format(self.numero)
 
 class Localizacion(models.Model):
 	cajon    = models.IntegerField()
@@ -42,8 +48,8 @@ class Localizacion(models.Model):
 	archivo  = models.ForeignKey(Archivo,null = True)
 	alumno   = models.ForeignKey(Alumno,null = True)
 
-	#def __str__(self):
-	#	return self.lugar
+	def __str__(self):
+		return self.cajon
 	
 	@staticmethod
 	def localizacion(id):
