@@ -24,4 +24,6 @@ urlpatterns = [
     url(r'^busqueda_apellido/$', views.busqueda_apellido),
     url(r'^busqueda_legajo/$', views.busqueda_legajo),
     url(r'^legajo/([0-9]+)/$', views.alumno),
+    url(r'^nuevo_alumno/$', views.nuevo_alumno),
+    url(r'^almacenar/$', views.almacenar),
 ]
