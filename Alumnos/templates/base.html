@@ -6,9 +6,8 @@
 		<!--Boostrap local-->
 		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap-theme.min.css">
-		<!--Boostrap
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css">
 	</head>
 	<body>
 
@@ -36,24 +35,17 @@
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> BUSCAR POR <span class="caret"></span></a>
 			<ul class="dropdown-menu">
-				<li><a href="/busqueda_dni"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> DNI </a></li>
+				<li><a href="/busqueda_dni"><span class="glyphicon glyphicon-book" aria-hidden="true" style="margin-right: 5px"></span> DNI </a></li>
+
 				<li role="separator" class="divider"></li>
-				<li><a href="/busqueda_apellido"><span class="glyphicon glyphicon-text-background" aria-hidden="true"></span> APELLIDO </a></li>
+
+				<li><a href="/busqueda_apellido"><span class="glyphicon glyphicon-text-background" aria-hidden="true" style="margin-right: 5px"></span> APELLIDO </a></li>
+				
 				<li role="separator" class="divider"></li>
-				<li><a href="/busqueda_legajo"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> LEGAJO </a></li>
+				
+				<li><a href="/busqueda_legajo"><span class="glyphicon glyphicon-folder-open" aria-hidden="true" style="margin-right: 5px"></span> LEGAJO </a></li>
 			</ul>
 		</li>
-
-	<!--
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Movimientos <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<li><a href="/movimientos"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Crear Nuevo</a></li>
-				<li role="separator" class="divider"></li>
-				<li><a href="/mostrar_movimientos"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Ver Todos</a></li>
-			</ul>
-		</li> -->
-
 	</ul>
 	</div>
 </nav>
@@ -66,8 +58,17 @@
 			</div>
 		</div>
 
-		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+		<script
+			  src="https://code.jquery.com/jquery-3.1.1.js"
+			  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+			  crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<script src="../static/js/jquery-3.1.1.js"></script>
+		<script src="../static/js/bootstrap.js"></script>
+		<script src="../static/js/bootstrap.min.js"></script>
+		<script src="../static/js/npm.js"></script>
 
 	</body>
 </html>
