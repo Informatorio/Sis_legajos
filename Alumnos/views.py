@@ -3,9 +3,6 @@ from django.http import HttpResponse,Http404
 from Alumnos.models import Alumno, Localizacion, Lugar, Archivo
 from Alumnos.forms import Busqueda_legajo_dni, Busqueda_legajo_apellido, Busqueda_legajo_legajo, Nuevo_alumno, AlmacenarForm
 
-def index(request):
-	return render(request, 'base.html')
-
 def home(request):
 	return render(request, 'home.html')
 
