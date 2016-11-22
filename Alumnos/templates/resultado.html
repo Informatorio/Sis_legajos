@@ -4,25 +4,29 @@
 
 {% block content %}
 <div class="panel panel-default" class="clearfix">
+
   <!-- Default panel contents -->
   <div class="panel-heading" style="text-align:center;"><h3>Los resultados para: {{ dni }} {{ apellido }} {{ legajo }} </h3></div>
-<table class="table">
-	<tr class="success">
-		<th scope="col" style="text-align:center;"><h4>Legajo</h4></th>
-		<th scope="col" style="text-align:center;"><h4>D.N.I.</h4></th>
-		<th scope="col" style="text-align:center;"><h4>Apellido</h4></th>
-		<th scope="col" style="text-align:center;"><h4>Nombre</h4></th>
-		<th scope="col" style="text-align:center;"><h4>Perfil Completo</h4></th>
-	</tr>
-	{% for alumno in legajos_encontrados %}
-	<tr>
-		<th style="text-align:center;">{{ alumno.legajo }}</p></th>
-		<th style="text-align:center;">{{ alumno.dni }}</th>
-		<th style="text-align:center;">{{ alumno.apellido }}</th>
-		<th style="text-align:center;">{{ alumno.nombre }}</th>
-		<th style="text-align:center;"><a href="/legajo/{{ alumno.id }}"> VER</a></th>
-	</tr>
-	{% endfor %}
-</table>
+	<table class="table">
+		<tr class="success">
+			<th scope="col" style="text-align:center;"><h4>Legajo</h4></th>
+			<th scope="col" style="text-align:center;"><h4>D.N.I.</h4></th>
+			<th scope="col" style="text-align:center;"><h4>Apellido</h4></th>
+			<th scope="col" style="text-align:center;"><h4>Nombre</h4></th>
+			<th scope="col" style="text-align:center;"><h4>Perfil Completo</h4></th>
+		</tr>
+		{% for alumno in legajos_encontrados %}
+		<tr>
+			<th style="text-align:center;">{{ alumno.legajo }}</p></th>
+			<th style="text-align:center;">{{ alumno.dni }}</th>
+			<th style="text-align:center;">{{ alumno.apellido }}</th>
+			<th style="text-align:center;">{{ alumno.nombre }}</th>
+			<th style="text-align:center;"><a href="/legajo/{{ alumno.id }}"> VER</a></th>
+		</tr>
+		{% endfor %}
+
+	</table>
+
 </div>
 {% endblock %}
+
