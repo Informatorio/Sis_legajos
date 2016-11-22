@@ -20,6 +20,7 @@ from Alumnos import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='Index'),
+    url(r'^home/', views.home, name='Home'),
     url(r'^busqueda_dni/$', views.busqueda_dni),
     url(r'^busqueda_apellido/$', views.busqueda_apellido),
     url(r'^busqueda_legajo/$', views.busqueda_legajo),

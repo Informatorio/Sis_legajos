@@ -6,6 +6,9 @@ from Alumnos.forms import Busqueda_legajo_dni, Busqueda_legajo_apellido, Busqued
 def index(request):
 	return render(request, 'base.html')
 
+def home(request):
+	return render(request, 'home.html')
+
 def busqueda_apellido(request):
 	if request.method == 'POST':
 		form = Busqueda_legajo_apellido(request.POST)
