@@ -2,39 +2,68 @@
 
 {% block content %}
 
-<div class="panel panel-success" class="col-lg-12">
-  <div class="panel-heading">
-    <h2 class="panel-title"><span class="glyphicon glyphicon-education" style="margin-right: 10px"></span>Información del Alumno</h2>
-  </div>
-  <div class="panel-body">
-  	<ul class="list-group">
-		<li class="list-group-item"><span class="glyphicon glyphicon-folder-open" style="margin-right: 10px"></span> Legajo: {{alumno.legajo}}</li>
-		<li class="list-group-item"><span class="glyphicon glyphicon-book" style="margin-right: 10px"></span> D.N.I: {{alumno.dni}}</li>
-		<li class="list-group-item"><span class="glyphicon glyphicon-text-background" style="margin-right: 10px"></span> Apellido: {{alumno.apellido}}</li>
-		<li class="list-group-item"><span class="glyphicon glyphicon-text-color" style="margin-right: 10px"></span> Nombre: {{alumno.nombre}}</li>
-  	</ul>
-  </div>
+<!-- Info del alumno -->
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-danger">
+			<div class="panel-heading text-center">
+				<h2 class="panel-title"><i class="glyphicon glyphicon-pushpin icon-margen"></i>Información del alumno</h2>
+			</div>
+			<div class="panel-body">
+				<ul class="list-group">
+					<li class="list-group-item"><i class="glyphicon glyphicon-user icon-margen"></i><strong>Apellido:</strong> {{alumno.apellido}}</li>
+					<li class="list-group-item"><i class="glyphicon glyphicon-font icon-margen"></i><strong>Nombre:</strong> {{alumno.nombre}}</li>			
+					<li class="list-group-item"><i class="glyphicon glyphicon-credit-card icon-margen"></i><strong>Documento N°:</strong> {{alumno.dni}}</li>
+					<li class="list-group-item"><i class="glyphicon glyphicon-folder-open icon-margen"></i><strong>Legajo N°:</strong> {{alumno.legajo}}</li>
+				</ul>
+				
+				<!-- Info de ubicacion del legajo -->
+				<div class="panel panel-danger">
+					<div class="panel-heading text-center">
+						<h2 class="panel-title"><i class="glyphicon glyphicon-map-marker icon-margen"></i>Ubicación de su legajo</h2>
+					</div>
+					<div class="panel-body">
+						<ul class="list-group">
+					  		<div class="col-sm-4">
+								<li class="list-group-item"><i class="glyphicon glyphicon-screenshot icon-margen"></i><strong>Lugar:</strong> {{lugar}}</li>
+							</div>
+							<div class="col-sm-4">
+								<li class="list-group-item"><i class="glyphicon glyphicon-folder-close icon-margen"></i><strong>Archivo:</strong> {{archivo}}</li>
+							</div>
+							<div class="col-sm-4">
+								<li class="list-group-item"><i class="glyphicon glyphicon-log-in icon-margen"></i><strong>Cajón:</strong> {{cajon}}</li>
+					  		</div>
+					  	</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div class="panel panel-success" class="col-lg-12">
-  <div class="panel-heading">
-    <h3 class="panel-title"><span class="glyphicon glyphicon-inbox" style="margin-right: 10px"></span>Ubicación de su Legajo</h3>
-  </div>
-  <div class="panel-body">
-  	<div class="row">
-	  	<ul class="list-group">
-	  		<div class="col-sm-4">
-			<li class="list-group-item"><span class="glyphicon glyphicon-picture" style="margin-right: 10px"></span> Lugar: {{lugar}}</li>
+<!-- Ubicaccion de su legajo -->
+<!-- <div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-danger">
+			<div class="panel-heading text-center">
+				<h2 class="panel-title">Ubicación de su legajo</h2>
 			</div>
-			<div class="col-sm-4">
-			<li class="list-group-item"><span class="glyphicon glyphicon-folder-close" style="margin-right: 10px"></span> Archivo: {{archivo}}</li>
+			<div class="panel-body">
+				<ul class="list-group">
+			  		<div class="col-sm-4">
+						<li class="list-group-item"><strong>Lugar:</strong> {{lugar}}</li>
+					</div>
+					<div class="col-sm-4">
+						<li class="list-group-item"><strong>Archivo:</strong> {{archivo}}</li>
+					</div>
+					<div class="col-sm-4">
+						<li class="list-group-item"><strong>Cajón:</strong> {{cajon}}</li>
+			  		</div>
+			  	</ul>
 			</div>
-			<div class="col-sm-4">
-			<li class="list-group-item"><span class="glyphicon glyphicon-object-align-left" style="margin-right: 10px"></span> Cajón: {{cajon}}</li>
-	  		</div>
-	  	</ul>
-    </div>
-  </div>  
-</div>
+		</div>
+	</div>
+</div> -->
+
 	
 {% endblock %}
