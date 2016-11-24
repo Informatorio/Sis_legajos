@@ -20,4 +20,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^busqueda/$', views.busqueda),
     url(r'^legajo/([0-9]+)/$', views.alumno),
+    url(r'^lugar/$', views.lugar_create),
+    url(r'^lugares/$', views.lugar_list, name= 'lugares_list'),    
+    url(r'^archivo/$', views.archivo_create),
+    url(r'^archivos/$', views.archivo_list, name= 'archivos_list'),    
+
 ]
