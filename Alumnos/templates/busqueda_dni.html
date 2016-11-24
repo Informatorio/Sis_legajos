@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/busqueda_dni/" method="POST" style="text-align:center;">
+	<!-- Etiqueta que sirve para identificar el formulario y mitigar ataques-->
+	{% csrf_token %}
+	{{ form.as_p }}
+
+	<input type="submit" value="BUSCAR">
+
+</form>
+
+{% endblock %}

@@ -1,13 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p> Legajo: {{alumno.legajo}}<p>
-<p> Nombre: {{alumno.nombre}}<p>
-<p> Apellido: {{alumno.apellido}}<p>
-<p> D.N.I: {{alumno.dni}}<p>
-<p> Lugar: {{lugar}}<p>	
-<p> Archivo: {{archivo}}<p>	
-<p> Cajón: {{cajon}}<p>	
 
+<div class="panel panel-success" class="col-lg-12">
+  <div class="panel-heading">
+    <h2 class="panel-title"><span class="glyphicon glyphicon-education" style="margin-right: 10px"></span>Información del Alumno</h2>
+  </div>
+  <div class="panel-body">
+  	<ul class="list-group">
+		<li class="list-group-item"><span class="glyphicon glyphicon-folder-open" style="margin-right: 10px"></span> Legajo: {{alumno.legajo}}</li>
+		<li class="list-group-item"><span class="glyphicon glyphicon-book" style="margin-right: 10px"></span> D.N.I: {{alumno.dni}}</li>
+		<li class="list-group-item"><span class="glyphicon glyphicon-text-background" style="margin-right: 10px"></span> Apellido: {{alumno.apellido}}</li>
+		<li class="list-group-item"><span class="glyphicon glyphicon-text-color" style="margin-right: 10px"></span> Nombre: {{alumno.nombre}}</li>
+  	</ul>
+  </div>
+</div>
+
+<div class="panel panel-success" class="col-lg-12">
+  <div class="panel-heading">
+    <h3 class="panel-title"><span class="glyphicon glyphicon-inbox" style="margin-right: 10px"></span>Ubicación de su Legajo</h3>
+  </div>
+  <div class="panel-body">
+  	<div class="row">
+	  	<ul class="list-group">
+	  		<div class="col-sm-4">
+			<li class="list-group-item"><span class="glyphicon glyphicon-picture" style="margin-right: 10px"></span> Lugar: {{lugar}}</li>
+			</div>
+			<div class="col-sm-4">
+			<li class="list-group-item"><span class="glyphicon glyphicon-folder-close" style="margin-right: 10px"></span> Archivo: {{archivo}}</li>
+			</div>
+			<div class="col-sm-4">
+			<li class="list-group-item"><span class="glyphicon glyphicon-object-align-left" style="margin-right: 10px"></span> Cajón: {{cajon}}</li>
+	  		</div>
+	  	</ul>
+    </div>
+  </div>  
+</div>
 	
 {% endblock %}

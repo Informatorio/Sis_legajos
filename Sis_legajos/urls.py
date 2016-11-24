@@ -16,13 +16,24 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from Alumnos import views
+from django.contrib.auth.views import login, logout
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^busqueda/$', views.busqueda),
+    url(r'^home/', views.home, name='Home'),
+    url(r'^busqueda_dni/$', views.busqueda_dni),
+    url(r'^busqueda_apellido/$', views.busqueda_apellido),
+    url(r'^busqueda_legajo/$', views.busqueda_legajo),
     url(r'^legajo/([0-9]+)/$', views.alumno),
-    url(r'^lugar/$', views.lugar_create),
-    url(r'^lugares/$', views.lugar_list, name= 'lugares_list'),    
-    url(r'^archivo/$', views.archivo_create),
-    url(r'^archivos/$', views.archivo_list, name= 'archivos_list'),    
-
+#<<<<<<< HEAD
+#    url(r'^lugar/$', views.lugar_create),
+#    url(r'^lugares/$', views.lugar_list, name= 'lugares_list'),    
+#    url(r'^archivo/$', views.archivo_create),
+#    url(r'^archivos/$', views.archivo_list, name= 'archivos_list'),    
+#=======
+    url(r'^nuevo_alumno/$', views.nuevo_alumno),
+    url(r'^almacenar/$', views.almacenar),
+    url(r'^login/$',login,{'template_name':'login.html'}),
+    url(r'^logout/$',logout,{'template_name':'logout.html'}),
+#>>>>>>> origin/Franco
 ]

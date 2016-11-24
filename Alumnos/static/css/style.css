@@ -1,0 +1,19 @@
+#AlertaVerdeArriba{
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin: 0px 0px;
+}
+
+#MarginDeArriba{
+	margin-top:70px;
+	text-align:center;
+}
+
+#content{
+	padding: 0px;
+}
+
+#BotonIniciarSesion{
+	margin-right: 0px;
+}

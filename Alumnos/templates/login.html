@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} Inicio de Sesion {% endblock %}
+
+<!--
+USUARIO de prueba: franco 
+CONTRASEÑA de prueba: inform23
+-->
+
+{% block content %}
+<form method="post" style="text-align:center;">
+	{% csrf_token %}
+	<label><h2>Bienvenidos al Sistema de Legajos</h2></label>
+	<br>
+	<br>
+	<label>Usuario: </label>
+	<br>
+	<input type="text" name="username">
+	<br>
+	<br>
+	<label>Contraseña: </label>
+	<br>
+	<input type="password" name="password">
+	<br>
+	<br>
+	<input type="submit" value="ENTRAR">
+</form>
+{% endblock %}
