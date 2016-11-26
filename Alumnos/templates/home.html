@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-			{% if not user.is_authenticated %}
-				<div class="alert alert-success alert-dismissible" id="AlertaVerdeArriba" role="alert">
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span></button>
-				<b>Si inicia sesión podrá acceder a las funciones.</b>
-				</div>
-			{% endif %}
+		{% if not user.is_authenticated %}
+			<div class="alert alert-danger alert-dismissible" id="AlertaRojaArriba" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span></button>
+			<b>Si inicia sesión podrá acceder a las funciones.</b>
+			</div>
+		{% endif %}
 
 	<div class="jumbotron">
-		<div class="container" style="text-align:center">
+		<div class="container">
 			  <h1>Bienvenidos al Sistema de Legajos</h1>
 			  <p>Puede buscar legajos, agregar un nuevo alumno y mover la ubicación de un Legajo utilizando los botones de la barra superior.</p>
 		</div>

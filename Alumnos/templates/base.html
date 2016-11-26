@@ -7,30 +7,31 @@
 		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap-theme.min.css">
 		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/styles.css">
 	</head>
 	<body>
 
-<!-- #################################### COMIENZO TOPBAR ############################################ -->
+<!-- ################################## COMIENZO TOPBAR ##################################### -->
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <!-- Brand and toggle get grouped for better mobile display -->
+<!-- COLOR DE FONDO: #9d9d9d -->
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/home">Sis Legajos v0.3</a>
+      <a class="navbar-brand" href="/home">Sis Legajos v0.4</a>
     </div>
 
-<!-- #################################### COMIENZO BOTONES ############################################ -->
+<!-- ################################# COMIENZO BOTONES ####################################### -->
       
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	
 		{% if not user.is_authenticated %}
 			<ul class="nav navbar-nav">
 				<li class="disabled"><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> NUEVO ALUMNO</a></li>
-				<li class="disabled"><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> MOVER LEGAJO</a></li>
-				<li class="disabled"><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> BUSCAR POR</a></li>
-<!--		<li class="disabled"><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> BOTON 4 </a></li>
-			<li class="disabled"><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"><
-/span> BOTON 5</a></li> -->			
+				<li class="disabled"><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> BUSCAR POR DNI</a></li>
+				<li class="disabled"><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> BUSCAR POR APELLIDO</a></li>
+				<li class="disabled"><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> BUSCAR POR LEGAJO</a></li>	
+				<li class="disabled"><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> MOVER LEGAJO</a></li>		
 			</ul>
 		{% else %}
 
@@ -39,14 +40,23 @@
 		<li class="nav-item">
 			<a class="nav-link" href="/nuevo_alumno"><span class="glyphicon glyphicon-plus-sign" aria-hidden="false"></span> NUEVO ALUMNO</a>
 		</li>
-
 		<li class="nav-item">
-			<a class="nav-link" href="#"><span class="glyphicon glyphicon-level-up" aria-hidden="false"></span> MOVER LEGAJO</a>
+			<a class="nav-link" href="/busqueda_dni"><span class="glyphicon glyphicon-book" aria-hidden="false"></span> BUSCAR POR DNI</a>
 		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/busqueda_apellido"><span class="glyphicon glyphicon-text-background" aria-hidden="false"></span> BUSCAR POR APELLIDO</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/busqueda_legajo"><span class="glyphicon glyphicon-folder-open" aria-hidden="false"></span> BUSCAR POR LEGAJO</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#"><span class="glyphicon glyphicon-retweet" aria-hidden="false"></span> MOVER LEGAJO</a>
+		</li>		
 
-<!-- #################################### COMIENZO DROPDOWN ############################################ -->
 
+<!-- ################################# COMIENZO DROPDOWN ####################################### -->
 
+<!--
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> BUSCAR POR <span class="caret"></span></a>
 			<ul class="dropdown-menu">
@@ -60,39 +70,37 @@
 				
 				<li><a href="/busqueda_legajo"><span class="glyphicon glyphicon-folder-open" aria-hidden="true" style="margin-right: 5px"></span> LEGAJO </a></li>
 			</ul>
-		</li>
-	</ul>
+		</li> -->
 
+	</ul>
 	{% endif %}
 
-<!-- #################################### COMIENZO LOGIN ############################################ -->
+<!-- ################################## COMIENZO LOGIN ############################################ -->
 
-	<ul class="nav navbar-nav navbar-right" id="BotonIniciarSesion">
-	{% if not user.is_authenticated %}
-		<li><a href="/login/"><span class="glyphicon glyphicon-open" aria-hidden="true"></span> INICIAR Sesion</a></li>
-  	{% else %}
-		<li class="dropdown">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Bienvenido <b>{{ user.username }}</b> <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<li><a href="#">Perfil</a></li>
-				<li role="separator" class="divider"></li>
-				<li><a href="/logout/">Cerrar Sesion</a></li>
-			</ul>
-		</li>
-	{% endif %}
-	</ul>
+		<ul class="nav navbar-nav navbar-right" id="BotonIniciarSesion">
+		{% if not user.is_authenticated %}
+			<li><a href="/login/"><span class="glyphicon glyphicon-open" aria-hidden="true"></span> INICIAR Sesion</a></li>
+		{% else %}
+			<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Bienvenido <b>{{ user.username }}</b> <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/logout/"><span class="glyphicon glyphicon-off" aria-hidden="true"></span><b>CERRAR SESIÓN</b></a></li>
+				</ul>
+			</li>
+		{% endif %}
+		</ul>
+	</div>
 </nav>
-<!-- ####################################### FIN LOGIN ############################################## -->
-<!-- ####################################### FIN TOPBAR ############################################ -->
+<!-- ################################### FIN LOGIN ########################################## -->
+<!-- ################################# FIN TOPBAR ############################################ -->
 
 
 			<div class="corregir-menu-fix" id="MarginDeArriba">
 			</div>
-			<div class="col-lg-12" class="col-md-8" class="col-sm-12" id="content">
+			<div class="container-fluid">
 				{% block content %}
 				{% endblock %}
 			</div>
-		</div>
 
 <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
