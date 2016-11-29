@@ -13,39 +13,41 @@
 				{% csrf_token %}
 				<div class="form-group">
 					<span class="input-group-addon" id="basic-addon1">LEGAJO</span>
-					<input type="text" name="legajo" class="form-control" placeholder="XXXX-XXXX" aria-describedby="basic-addon1">
+					<input id="id_legajo" maxlength="9" name="legajo" required="" type="text" class="form-control" placeholder="XXXX-XXXX" aria-describedby="basic-addon1">
 				</div>
 				<div class="form-group">
 					<span class="input-group-addon" id="basic-addon1">DNI</span>
-					<input type="text" name="dni" class="form-control" placeholder="12345678" aria-describedby="basic-addon1">
+					<input id="id_dni" name="dni" maxlength="8" required="" type="text" class="form-control" placeholder="12345678" aria-describedby="basic-addon1">
 				</div>
 				<div class="form-group">
 					<span class="input-group-addon" id="basic-addon1">NOMBRE</span>
-					<input type="text" name="nombre" class="form-control" placeholder="Gregorias" aria-describedby="basic-addon1">
+					<input id="id_nombre" maxlength="70" name="nombre" required="" type="text" class="form-control" placeholder="Gregorias" aria-describedby="basic-addon1">
 				</div>
 				<div class="form-group">
 					<span class="input-group-addon" id="basic-addon1">APELLIDO</span>
-					<input type="text" name="apellido" class="form-control" placeholder="Matorras" aria-describedby="basic-addon1">
+					<input id="id_apellido" maxlength="70" name="apellido" required="" type="text" class="form-control" placeholder="Matorras" aria-describedby="basic-addon1">
 				</div>
 				<div class="form-group">
 					<span class="input-group-addon" id="basic-addon1">FECHA DE NACIMIENTO</span>
-					<input type="text" name="fecha_de_nacimiento" placeholder="Averiguar que va acá" class="form-control" aria-describedby="basic-addon1">
+					<input id="id_fecha_nacimiento" name="fecha_nacimiento" required="" type="text" placeholder="Averiguar que va acá" class="form-control" aria-describedby="basic-addon1">
 				</div>
 				<div class="form-group">
-					<button type="submit" class="btn btn-danger">GUARDAR DATOS</button>
+					<input type="submit" value="GUARDAR DATOS" class="btn btn-danger"></input>
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
 
-<!-- 	<form action="/nuevo_alumno/" method="POST">
-		
-		{% csrf_token %}
-		{{ form.as_p }}
+<!--
+<form action="/nuevo_alumno/" method="POST">
 
-		<input type="submit" value="GUARDAR DATOS"/>
+	{% csrf_token %}
+	{{ form.as_p }}
 
-	</form> -->
+<input type="submit" value="GUARDAR DATOS"/>
+
+</form>
+-->
 
 {% endblock %}
