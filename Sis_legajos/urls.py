@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+# from django.conf import settings
+# from django.conf.urls.static import static
 from django.conf.urls import url
 from django.contrib import admin
 from Alumnos import views
@@ -25,15 +27,9 @@ urlpatterns = [
     url(r'^busqueda_apellido/$', views.busqueda_apellido),
     url(r'^busqueda_legajo/$', views.busqueda_legajo),
     url(r'^legajo/([0-9]+)/$', views.alumno),
-#<<<<<<< HEAD
-#    url(r'^lugar/$', views.lugar_create),
-#    url(r'^lugares/$', views.lugar_list, name= 'lugares_list'),    
-#    url(r'^archivo/$', views.archivo_create),
-#    url(r'^archivos/$', views.archivo_list, name= 'archivos_list'),    
-#=======
     url(r'^nuevo_alumno/$', views.nuevo_alumno),
     url(r'^almacenar/$', views.almacenar),
-    url(r'^login/$',login,{'template_name':'login.html'}),
-    url(r'^logout/$',logout,{'template_name':'logout.html'}),
-#>>>>>>> origin/Franco
 ]
+
+# if settings.DEBUG:
+#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -3,8 +3,7 @@
 
 {% block content %}
 
- <form action="/almacenar/" method="POST" style="text-align:center;">
-	
+<form action="/almacenar/" method="POST">
 	{% csrf_token %}
 	{{ form.as_p }}
 

@@ -22,10 +22,12 @@ class Alumno(models.Model):
 		return Alumno.objects.filter(dni=dni)
 	@staticmethod
 	def buscar_legajo_apellido(apellido):
-		return Alumno.objects.filter(apellido__iexact=apellido)
+		return Alumno.objects.filter(apellido=apellido)
+
 	@staticmethod
 	def buscar_legajo_legajo(legajo):
 		return Alumno.objects.filter(legajo=legajo)
+
 
 class Lugar(models.Model):
 	descripcion = models.CharField(max_length=30)
@@ -38,6 +40,9 @@ class Archivo(models.Model):
 	cajones = models.IntegerField()
 	lugar = models.ForeignKey(Lugar,null=True)
 
+
+	def __str__(self):
+		return "{}".format(self.numero)
 
 	def __str__(self):
 		return "{}".format(self.numero)

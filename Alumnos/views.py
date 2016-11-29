@@ -51,7 +51,6 @@ def alumno(request, id):
 		raise Http404("No se encontró el legajo")
 	return render(request, 'alumno.html',{'alumno': alumno, 'lugar': lugar, 'archivo': archivo, 'cajon': cajon})
 
-
 def nuevo_alumno(request):
 	if request.method == 'POST':
 		form = Nuevo_alumno(request.POST)

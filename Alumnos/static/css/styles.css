@@ -1,0 +1,19 @@
+*{
+	box-sizing: border-box;
+}
+.navbar-brand{
+	margin: 0 1em;
+}
+
+.icon-margen{
+	margin-right: .3em;
+}
+
+.icon-margen-li{
+	margin-right: 2.5rem;
+}
+
+.corregir-menu-fix{
+	margin-top: 70px;
+	text-align: center;
+}
