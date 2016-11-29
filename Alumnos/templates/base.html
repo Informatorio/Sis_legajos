@@ -3,10 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>{% block title %} Sis Legajos {% endblock %}</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 		<!-- Boostrap-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">  -->
 		
 
 		<!-- Mis estilos -->
@@ -59,19 +62,41 @@
 			          </ul>
 			        </li>
 				</ul><!-- ./nav-bar busqueda -->
-			</div>
-			<!-- ./collapse -->
+				
+				<!-- Login / Logout -->
+				<ul class="nav navbar-nav navbar-right pull-right marginr-inicio-sesion">
+					
+					{%if not user.is_authenticated %}
+					<li><a href="/login/"><i class="glyphicon glyphicon-log-in icon-margen-li"></i>Iniciar sesíon</a></li>
+
+						{% else %}
+							<li class="dropdown">
+					          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user icon-margen"></i> Bienvenido <strong>{{user.username}}</strong> <span class="caret"></span></a>
+					          <ul class="dropdown-menu">
+					            <li><a href="/logout/"><i class="glyphicon glyphicon-off icon-margen-li"></i> Logout</a></li>
+					          </ul>
+					        </li>
+				    {%  endif %}
+				</ul><!-- ./nav-bar busqueda -->
+
+
+			</div><!-- ./collapse -->
+			
 		</nav><!-- ./nav principal -->
 
 		<div class="corregir-menu-fix"></div> <!-- /.clear-fix -->
 
-		<div class="col-lg-12" class="col-md-8" class="col-sm-12" id="content">
-			{% block content %}
-			{% endblock %}
+		<div class="container">
+				{% block content %}
+				{% endblock %}
 		</div>
-
 		<!-- Footer -->
+		<footer class="footer-bottom">
+			<span>Informatorio 2016 © . All Rights Reserved | Design by <a href="https://www.facebook.com/informatorio/?fref=ts">Informatorio Chaco</a></span>
+		</footer>
 		
+
+
 
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

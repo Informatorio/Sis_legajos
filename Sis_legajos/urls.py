@@ -19,15 +19,19 @@ from django.conf.urls import url
 from django.contrib import admin
 from Alumnos import views
 
+from django.contrib.auth.views import login, logout
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='Index'),
+    url(r'^$', views.index, name='Home'),
     url(r'^busqueda_dni/$', views.busqueda_dni),
     url(r'^busqueda_apellido/$', views.busqueda_apellido),
     url(r'^busqueda_legajo/$', views.busqueda_legajo),
     url(r'^legajo/([0-9]+)/$', views.alumno),
     url(r'^nuevo_alumno/$', views.nuevo_alumno),
     url(r'^almacenar/$', views.almacenar),
+    url(r'^login/$', login, {'template_name': 'login.html'}),
+    url(r'^logout/$', login, {'template_name': 'login.html'}),
 ]
 
 # if settings.DEBUG:
