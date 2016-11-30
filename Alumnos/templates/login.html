@@ -5,36 +5,6 @@
 {% block content %}
 
 
-<!-- <div class="row center-login">
-	<div class="col-md-6 col-md-offset-3">
-		<div class="panel panel-primary">
-			<div class="panel-heading text-center">
-				<h3 class="panel-title">SL Admin v0.3</h3>
-			</div>
-			<div class="panel-body">
-				<form  method="POST">
-					{% csrf_token %}
-					<div class="input-group input-group">
-						<span class="input-group-addon" id="usuario">Usuario</span>
-						<input type="text" class="form-control"  aria-describedby="usuario">
-					</div>
-					<br>
-					<div class="input-group">
-						<span class="input-group-addon" id="password">Password</span>
-						<input type="password" class="form-control"  aria-describedby="password">
-					</div>
-					<br>
-					<div class="row">
-						<div class="col-md-12">
-							<button type="submit" class="btn btn-success col-md-12">Entrar</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div> -->
-
 <div class="row center-login">
 	<div class="col-md-6 col-md-offset-3">
 		<div class="panel panel-primary">
@@ -44,51 +14,30 @@
 			<div class="panel-body">
 				<form method="post">
 					{% csrf_token %}
-					<div class="form-group">
-						<span class="input-group-addon" id="basic-addon1">Usuario</span>
-						<input type="text" name="username" class="form-control" aria-describedby="basic-addon1">
+
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Username</span>
+					  <input type="text" name="username" placeholder="Ingrese su nombre de usuario" class="form-control" aria-describedby="basic-addon1">
 					</div>
-					<div class="form-group">
-						<span class="input-group-addon" id="basic-addon1">Password</span>
-						<input type="password" name="password" class="form-control" aria-describedby="basic-addon1">
-					</div>
-					
 					<br>
+
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1">Password</span>
+					  <input type="password" name="password" placeholder="Ingrese su contraseña" class="form-control" aria-describedby="basic-addon1">
+					</div>
+					<br>
+
 					<div class="row">
 						<div class="col-md-12">
 							<button type="submit" class="btn btn-success col-md-12">Entrar</button>
 						</div>
 					</div>
+
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
-
-<!-- <div class="col-md-4 col-md-offset-4">
-	<div class="panel panel-danger">
-		<div class="panel-heading">
-			<h3 class="panel-title">Bienvenidos al Sistema de Legajos</h3>
-		</div>
-		<div class="panel-body">
-			<form method="post">
-				{% csrf_token %}
-				<div class="form-group">
-					<span class="input-group-addon" id="basic-addon1">Usuario</span>
-					<input type="text" name="username" class="form-control" aria-describedby="basic-addon1">
-				</div>
-				<div class="form-group">
-					<span class="input-group-addon" id="basic-addon1">Contraseña</span>
-					<input type="password" name="password" class="form-control" aria-describedby="basic-addon1">
-				</div>
-
-				<div class="form-group">
-					<button type="submit" class="btn btn-danger">ENTRAR</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div> -->
 
 
 
