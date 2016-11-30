@@ -66,8 +66,8 @@
 				<!-- Login / Logout -->
 				<ul class="nav navbar-nav navbar-right pull-right marginr-inicio-sesion">
 					
-					{%if not user.is_authenticated %}
-					<li><a href="/login/"><i class="glyphicon glyphicon-log-in icon-margen-li"></i>Iniciar sesíon</a></li>
+					{% if not user.is_authenticated %}
+					<li><a href="/login/"><i class="glyphicon glyphicon-log-in icon-margen-li"></i>Iniciar sesión</a></li>
 
 						{% else %}
 							<li class="dropdown">

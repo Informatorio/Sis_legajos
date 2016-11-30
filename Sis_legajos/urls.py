@@ -23,7 +23,7 @@ from django.contrib.auth.views import login, logout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='Home'),
+    url(r'^home/', views.home, name='Home'),
     url(r'^busqueda_dni/$', views.busqueda_dni),
     url(r'^busqueda_apellido/$', views.busqueda_apellido),
     url(r'^busqueda_legajo/$', views.busqueda_legajo),
@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^nuevo_alumno/$', views.nuevo_alumno),
     url(r'^almacenar/$', views.almacenar),
     url(r'^login/$', login, {'template_name': 'login.html'}),
-    url(r'^logout/$', login, {'template_name': 'login.html'}),
+    url(r'^logout/$', logout, {'template_name': 'logout.html'}),
 ]
 
 # if settings.DEBUG:
